@@ -11,24 +11,28 @@ h1
     color: #333538;
 }
 
-section
+form
 {
     margin: auto;
     margin-top: 150px;
     text-align: center;
     padding: 15px;
     width: 550px;
-    height: 150px;
-    
+    height: 200px;
     background-color: #ffffff;
     box-shadow: 0 0 10px #999;
 }
 
 .textBut
 {
-    display: flex;
+    display: block;
     margin-top: 50px;
     margin-left: 30px;
+}
+.error{
+    color: red;
+    font: size;
+
 }
 
 .input
@@ -82,6 +86,11 @@ p
     
 }
 
+.textBut p{
+    margin: 0 auto;
+    font-size: 10px;
+}
+
 .tasks p
 {
     font-size: 20px;
@@ -105,8 +114,27 @@ p
     height: 15px;
 }
 
-.error p{
+
+
+
+.message{
+    color: black
+}
+.error{
+    color: red;
+}
+.passed{
     color: green;
 }
 
+.xazgasmuli{
+    text-decoration: line-through;
+}
 
+.tasks img{
+    
+    width: 15px;
+    height: 15px;
+    margin-left: 15px;
+
+}
