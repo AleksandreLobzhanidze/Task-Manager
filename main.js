@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 function showImage(x) {
     const item = images[x];
-    img.src = item.x;
+    img.src = item.img;
 
 }
 
