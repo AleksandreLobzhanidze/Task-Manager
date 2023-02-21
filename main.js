@@ -1,74 +1,46 @@
-const LOCALE = {
-    'web.page.error': 'შეავსეთ ველი',
-    'web.page.success': 'Succes',
-    'web.page.error2':  '5ზე მეტი'
-};
-
-let array [
+const images = [
     {
-        id: 242342564645242,
-        completed: true,
-        name: "html&css"
+        img: 'img1.jpg',
     },
     {
-        id: 135462342336434,
-        completed: false,
-        name: "Dagvianeba"
-    }
+        img: 'img2.jpg',
+    },
+    {
+        img: 'img3.jpg',
+    },
 ];
 
-let array1 = [1,2,3,4,5,6,7];
+let first = 0;
 
+const img = document.getElementById('surati');
+const prevBtn =  document.querySelector('.prev-btn');
+const nextBtn =  document.querySelector('.next-btn');
 
-function addList(){
-    let inputValue = document.getElementsByClassName('input').value;
-    let message = document.getElementsByClassName('massage');
+window.addEventListener('DOMContentLoaded', function () {
+    const item = images[first];
+    img.src = item.img;
+  });
 
-    if(inputValue.length === 0){
-        message.classList.add('error');
-        message.innerText = getCaption('web.page.error');
-        
-        setTimeout(function() {
-            message.classList.remove('error');
-        }, 2000);
-    }else{
-        array.push({
-            name: inputValue,
-            id: '1239756823',
-            completed: false
-        })
-        message.classList.add('success');
-        setTimeout(function() {
-            message.classList.remove('success');
-        },2000)
-        message.innerText = getCaption('web.page.success');
-
-        drawList();
-    }
-    localStorage.setItem("items", JSON.stringify(array));
-}
-
-function drawList(){
-    let html = '';
-    for(let index = 0;  index < array.length; index++){
-        html += `
-            <div class="list ${array[index].completed ? 'task-completed' : '' } ">
-                <img src="check-mark.png" class="xazgasmuli" alt="">
-                <h3>
-                    <span class="completedmark"></span>
-                    ${array[index].name}
-                </h3>
-                <p>html&css</p>
-                <a href="index2.html"><img class="editP" src="edit.png" alt="editIcon" id="${array[index].id}"></a>
-                <a href=""><img class="deleteP" src="delete.png" alt="DeleteIcon"></a>
-            </div>
-        `
-    }
-    document.getElementById('taskContainer').innerHTML = html;
+function showImage(x) {
+    const item = images[x];
+    img.src = item.x;
 
 }
 
-drawList();
+nextBtn.addEventListener('click', function () {
+    first++;
+    if (first > images.length - 1) {
+      first = 0;
+    }
+    console.log(first);
+    showImage(first);
+});
 
-
-
+prevBtn.addEventListener('click', function () {
+    first--;
+    if (first < 0) {
+      first = images.length - 1;
+    }
+    console.log(first);
+    showImage(first);
+});
